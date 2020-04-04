@@ -1,6 +1,6 @@
 export const T_PLUS = '+';
 export const T_MINUS = '-';
-export const T_MULT = '*';
+export const T_STAR = '*';
 export const T_NUMBER = 'NUMBER';
 export const T_SEMICOLON = ';';
 export const T_TYPE = 'TYPE';
@@ -31,7 +31,7 @@ const language: tokenDeclaration[] = [
     [' ', null],
     [';', t(T_SEMICOLON)],
     ['=', t(T_EQUALS)],
-    ['*', t(T_MULT)],
+    ['*', t(T_STAR)],
     [/^-?\d+\.?\d*/, tWithValue(T_NUMBER)],
     ['+', t(T_PLUS)],
     ['-', t(T_MINUS)],

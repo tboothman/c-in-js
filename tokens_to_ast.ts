@@ -14,7 +14,7 @@
 //     }
 // }
 
-import {T_MINUS, T_MULT, T_NUMBER, T_PLUS, T_SEMICOLON, Token} from "./lex";
+import {T_MINUS, T_STAR, T_NUMBER, T_PLUS, T_SEMICOLON, Token} from "./lex";
 
 type Add = {
     type: 'add',
@@ -121,7 +121,7 @@ export function parseMultiply(tokens: Token[]): [Multiply, number] | false {
     i += left[1];
     operands.push(left[0]);
     while (i < tokens.length) {
-        if (tokens[i].token !== T_MULT) break;
+        if (tokens[i].token !== T_STAR) break;
         i++;
         let operand = parseNumber(tokens.slice(i));
         if (!operand) break;
