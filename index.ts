@@ -1,4 +1,4 @@
-import parse from './parser';
+import {parse} from './parser';
 
 const input = `5 + 1 + 1;`;
 
