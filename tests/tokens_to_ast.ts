@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+import 'mocha';
 import {lex, T_NUMBER, T_PLUS, T_SEMICOLON} from "../lex";
 import {tokens_to_ast} from "../tokens_to_ast";
 
@@ -13,6 +15,6 @@ describe('tokens_to_ast()', () => {
             value: '-2'
         }, {
             token: T_SEMICOLON
-        }])).toStrictEqual({type: 'statement', content: {type: 'add', operands: [1.5, -2]}});
+        }])).to.deep.equal({type: 'statement', content: {type: 'add', operands: [1.5, -2]}});
     });
 });
